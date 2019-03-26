@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+	'name' => env('APP_NAME', 'Laravel'),
+	'faker_locale' => env('DEV_FAKER_LOCALE', 'en_US'),
 
     /*
     |--------------------------------------------------------------------------
