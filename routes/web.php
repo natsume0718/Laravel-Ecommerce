@@ -15,7 +15,8 @@
 //    return view('welcome');
 //});
 
-Route::get('/','ItemController@index');
+Route::get('/','ItemController@index')->name('item-list');
+Route::get('/detail/{item}','ItemController@detail')->name('item-detail');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

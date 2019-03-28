@@ -69,9 +69,10 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-
-        @yield('content')
+		</nav>
+		<div class="mx-auto">
+		@yield('content')
+		</div>
     </div>
 
     <!-- Scripts -->
