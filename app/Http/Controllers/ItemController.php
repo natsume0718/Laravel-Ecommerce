@@ -9,7 +9,12 @@ class ItemController extends Controller
 {
 	public function index()
 	{
-		$var = 'むらっしゅ';
-		return view('item.index',compact('var'));
+		$items = Item::all();
+		return view('item.index',compact('items'));
+	}
+
+	public function detail(Item $item)
+	{
+		return view('item.detail',compact('item'));
 	}
 }
