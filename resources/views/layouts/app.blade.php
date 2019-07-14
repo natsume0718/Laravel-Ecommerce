@@ -42,7 +42,11 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @guest
+                        @auth('admin')
+                        <li>管理者ログイン中</li>
+                        @endauth
+
+                        @guest()
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
