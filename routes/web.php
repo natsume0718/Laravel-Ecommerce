@@ -12,7 +12,9 @@
 */
 Route::get('/','ItemController@index')->name('item.list');
 Route::get('/detail/{item}','ItemController@detail')->name('item.detail');
+
 Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function () {
     Route::view('home','admin.home')->name('admin.home')->middleware('auth:admin');
@@ -20,5 +22,3 @@ Route::prefix('admin')->group(function () {
     Route::post('login','Auth\AdminLoginController@login');
     Route::post('logout', 'Auth\LoginController@logout')->name('admin.logout');
 });
-
-Route::get('/home', 'HomeController@index')->name('home');
