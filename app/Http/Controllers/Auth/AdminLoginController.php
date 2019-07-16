@@ -28,7 +28,7 @@ class AdminLoginController extends Controller
      */
     protected function redirectTo()
     {
-        return route('admin.home');
+        return route('admin.item.list');
     }
 
     /**
