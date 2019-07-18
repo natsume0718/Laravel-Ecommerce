@@ -35,9 +35,14 @@ class AdminItemController extends Controller
 		return view('admin.item.edit',compact('item'));
 	}
 
-	public function update(ItemRequest $request, Item $item)
+	public function update(Request $request, Item $item)
 	{
-		$item->fill($request->all())->save();
+		$data = $request->validate([
+			'name'=>'required|string|max:255',
+			'detail' =>'required|string|max:255',
+			'stock'=>'required|integer|max:2147483640'
+		]);
+		$item->fill($data)->save();
 		return redirect()->route('admin.item.detail',$item);
 	}
 }
