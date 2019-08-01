@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+@include('layouts.message')
+<h1>詳細管理画面</h1>
 <div class="card">
   <div class="card-body">
 	<ul class="list-group">
@@ -21,7 +23,8 @@
 @endif
 </p>
 	</li>
-	<a href="{{ route('item.list') }}" class="btn btn-primary">トップへ戻る</a>
+	<a href="{{ route('admin.item.list') }}" class="btn btn-primary">トップへ戻る</a>
+	<a href="{{ route('admin.item.edit',['item'=>$item]) }}" class="btn btn-warning">編集</a>
   </div>
 </div>
 @endsection
